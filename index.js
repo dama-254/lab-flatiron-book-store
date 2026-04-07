@@ -1,4 +1,4 @@
-// CRITERIA 1: Select and change header
+// 1. HEADER FIX (Check for 's' and exact ID)
 const header = document.querySelector('#header');
 if (header) {
     header.textContent = "Flatbooks Technical Books";
@@ -22,17 +22,17 @@ const books = [
   }
 ];
 
+// 2. SELECTION FIX
 const bookList = document.querySelector('#book-list');
 
-// Remove the placeholder
+// 3. REMOVE PLACEHOLDER
 const placeholder = document.querySelector('#delete-this');
 if (placeholder) {
     placeholder.remove();
 }
 
-// CRITERIA 2 & 3: Create and Append
+// 4. THE LOOP (Must create li, h3, p, img)
 books.forEach(book => {
-    // Create elements with specific names the rubric wants
     const bookContainer = document.createElement('li'); 
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
@@ -43,11 +43,15 @@ books.forEach(book => {
     bookImage.src = book.image;
     bookImage.alt = book.title;
 
-    // Nest the elements inside the container (li)
+    // NESTING (Title/Author/Img go INSIDE the li)
     bookContainer.appendChild(bookTitle);
     bookContainer.appendChild(bookAuthor);
     bookContainer.appendChild(bookImage);
 
-    // CRITICAL: Append the container to the list (ul)
-    bookList.appendChild(bookContainer);
+    // APPEND TO DOM (The li goes INSIDE the ul)
+    if (bookList) {
+        bookList.appendChild(bookContainer);
+    }
 });
+
+console.log("DOM processing complete.");
