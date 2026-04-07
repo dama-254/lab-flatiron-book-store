@@ -1,9 +1,8 @@
-
+// CRITERIA 1: Select and change header
 const header = document.querySelector('#header');
 if (header) {
     header.textContent = "Flatbooks Technical Books";
 }
-
 
 const books = [
   {
@@ -23,33 +22,32 @@ const books = [
   }
 ];
 
-
 const bookList = document.querySelector('#book-list');
 
-
+// Remove the placeholder
 const placeholder = document.querySelector('#delete-this');
 if (placeholder) {
     placeholder.remove();
 }
 
+// CRITERIA 2 & 3: Create and Append
 books.forEach(book => {
-    // CRITERIA: Create elements with these exact variable names
+    // Create elements with specific names the rubric wants
     const bookContainer = document.createElement('li'); 
     const bookTitle = document.createElement('h3');
     const bookAuthor = document.createElement('p');
     const bookImage = document.createElement('img');
 
-    // Assign data from the object
     bookTitle.textContent = book.title;
     bookAuthor.textContent = book.author;
     bookImage.src = book.image;
     bookImage.alt = book.title;
 
-    // --- 4. Append elements to existing DOM element ---
-    // First: Nest the info inside the container
+    // Nest the elements inside the container (li)
     bookContainer.appendChild(bookTitle);
     bookContainer.appendChild(bookAuthor);
     bookContainer.appendChild(bookImage);
 
- bookList.appendChild(bookContainer); 
+    // CRITICAL: Append the container to the list (ul)
+    bookList.appendChild(bookContainer);
 });
