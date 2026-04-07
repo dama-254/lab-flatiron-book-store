@@ -19,16 +19,12 @@ const bookStore = {
   ]
 };
 
-// Task 1: Update the header
-const header = document.querySelector('#header');
-header.textContent = bookStore.name;
+// Step 2: Select and update header
+const bookStoreTitle = document.getElementById('header');
+bookStoreTitle.textContent = bookStore.name;
 
-// Task 2: Remove placeholder li
-const placeholder = document.querySelector('#delete-this');
-if (placeholder) placeholder.remove();
-
-// Task 3: Create and append elements for every book
-const bookList = document.querySelector('#book-list');
+// Step 3: Loop through books and build elements
+const bookList = document.getElementById('book-list');
 
 bookStore.books.forEach(book => {
   const bookContainer = document.createElement('li');
@@ -39,11 +35,11 @@ bookStore.books.forEach(book => {
   bookTitle.textContent = book.title;
   bookAuthor.textContent = book.author;
   bookImage.src = book.image;
-  bookImage.alt = book.title;
 
-  bookContainer.appendChild(bookImage);
   bookContainer.appendChild(bookTitle);
   bookContainer.appendChild(bookAuthor);
+  bookContainer.appendChild(bookImage);
 
   bookList.appendChild(bookContainer);
 });
+
