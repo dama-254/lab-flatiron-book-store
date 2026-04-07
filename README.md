@@ -104,3 +104,15 @@ And it's gone!
 [code-injection]:
   https://www.reddit.com/r/learnjavascript/comments/9502x5/is_innerhtml_still_considered_bad/e3p31go/?utm_source=share&utm_medium=web2x&context=3
 [classlist]: https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+## Lab Solution: Flatbooks Bookstore
+
+### Implementation Details:
+- **DOM Manipulation:** Targeted `#header` and `#book-list` for dynamic content rendering.
+- **Data Structure:** Utilized a centralized `bookStore` object for all book metadata.
+- **Debugging:** Implemented `console.log` checkpoints to monitor element selection and loop processing.
+
+### How to Run:
+1. Clone the repository.
+2. Run `npm install`.
+3. Open `index.html` in a live server or browser.
