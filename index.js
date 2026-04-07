@@ -1,12 +1,10 @@
-// --- 1. Select and change header element ---
-// The test expects the ID 'header' to be changed to this exact string
+
 const header = document.querySelector('#header');
 if (header) {
     header.textContent = "Flatbooks Technical Books";
 }
 
-// --- 2. Define the Catalog (The Object) ---
-// Ensure this matches the data provided in your lab
+
 const books = [
   {
     title: "Eloquent JavaScript: A Modern Introduction to Programming",
@@ -25,10 +23,10 @@ const books = [
   }
 ];
 
-// --- 3. Create and Append Elements ---
+
 const bookList = document.querySelector('#book-list');
 
-// Clear the existing example placeholder
+
 const placeholder = document.querySelector('#delete-this');
 if (placeholder) {
     placeholder.remove();
@@ -53,6 +51,5 @@ books.forEach(book => {
     bookContainer.appendChild(bookAuthor);
     bookContainer.appendChild(bookImage);
 
-    // Second: Append the container to the actual webpage (the <ul>)
-    bookList.appendChild(bookContainer);
+ bookList.appendChild(bookContainer); 
 });
